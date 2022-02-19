@@ -1,0 +1,383 @@
+body {
+  background-image: url("../images/bg-desktop-dark.jpg");
+  background-color: #161722;
+  background-repeat: no-repeat;
+  background-position: 1% -8%;
+  background-size: contain;
+  background-attachment: fixed;
+  font-family: "Josefin Sans";
+  font-size: 18px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.todo {
+  width: 500px;
+  min-height: 500px;
+  max-height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.todo__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fff;
+}
+
+.todo__header__title {
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  font-size: 2.5rem;
+}
+
+.todo__header .icon-show {
+  display: block;
+}
+
+.todo__header .icon-hide {
+  display: none;
+}
+
+.todo__input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #25273c;
+  padding: 0.8rem;
+  border-radius: 5px;
+  margin-top: 1rem;
+}
+
+.todo__input__check-all {
+  border: 1px solid #777a92;
+  padding: 5px;
+  border-radius: 50px;
+  height: 25px;
+  width: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 2;
+  position: relative;
+  cursor: pointer;
+}
+
+.todo__input__check-all img {
+  display: none;
+}
+
+.todo__input__area {
+  color: #cacde8;
+  margin-left: 1rem;
+  position: relative;
+  width: 100%;
+  min-height: 30px;
+  overflow-y: auto;
+  font-size: inherit;
+}
+
+.todo__input__area__placeholder {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.todo__input__area__text {
+  outline: none;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+.todo__lists {
+  margin-top: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.todo__lists__list {
+  min-width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.8rem;
+  color: #777a92;
+  border-bottom: 1px solid #393a4c;
+  background-color: #25273c;
+}
+
+.todo__lists__list:first-child {
+  border-radius: 7px 7px 0px 0px;
+}
+
+.todo__lists__list:hover .todo__lists__list__delete {
+  visibility: visible;
+}
+
+.todo__lists__list__check-all {
+  border: 1px solid #4d5066;
+  background-image: linear-gradient(120deg, #57ddff, #c058f3);
+  padding: 5px;
+  border-radius: 50px;
+  height: 25px;
+  width: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 2;
+}
+
+.todo__lists__list__check-all img {
+  display: block;
+}
+
+.todo__lists__list__check-all:hover {
+  cursor: pointer;
+}
+
+.todo__lists__list__check {
+  border: 1px solid #777a92;
+  padding: 5px;
+  border-radius: 50px;
+  height: 25px;
+  width: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 2;
+  position: relative;
+  cursor: pointer;
+}
+
+.todo__lists__list__check img {
+  display: none;
+}
+
+.todo__lists__list__todo {
+  margin-left: 1rem;
+  width: 90%;
+}
+
+.todo__lists__list__todo span:hover {
+  cursor: pointer;
+}
+
+.todo__lists__list__delete {
+  visibility: hidden;
+  width: 20px;
+  height: 20px;
+}
+
+.todo__lists__list__delete:hover {
+  cursor: pointer;
+}
+
+.todo__navs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #777a92;
+  padding: 0.5rem 0.8rem;
+  background-color: #25273c;
+  border-radius: 0 0 7px 7px;
+  font-size: 0.8rem;
+}
+
+.todo__navs__counter__count {
+  margin-right: 3px;
+}
+
+.todo__navs__nav__ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.todo__navs__nav__ul li {
+  font-weight: 600;
+}
+
+.todo__navs__nav__ul li a {
+  color: #777a92;
+  text-decoration: none;
+  -webkit-transition: color 0.5s ease-in-out;
+  transition: color 0.5s ease-in-out;
+}
+
+.todo__navs__nav__ul li a:hover {
+  color: #cacde8;
+}
+
+.todo__navs__nav__ul li .active {
+  color: #3a7bfd;
+}
+
+.todo__navs__clear {
+  font-weight: 500;
+}
+
+.todo__navs__clear:hover {
+  -webkit-transition: color 0.5s ease-in-out;
+  transition: color 0.5s ease-in-out;
+  color: #cacde8;
+  cursor: pointer;
+}
+
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+input,
+select,
+textarea,
+button {
+  border: none;
+  outline: none;
+  font: inherit;
+}
+
+html,
+body,
+h1, h2, h3, h4, h5, h6,
+p,
+figcaption,
+figure,
+dl, dd {
+  margin: 0;
+  padding: 0;
+}
+
+ul[role='list'],
+ol[role='list'], ul, ol {
+  list-style: none;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+img, picture {
+  max-width: 100%;
+  display: block;
+}
+
+@media (prefers-reduce-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: smooth;
+  }
+  *, *::after, *::before {
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}
+/*# sourceMappingURL=main.css.map */
