@@ -130,6 +130,10 @@ body {
   outline: none;
   word-break: break-all;
   word-wrap: break-word;
+  background-color: transparent;
+  font-size: inherit;
+  width: 100%;
+  color: inherit;
 }
 
 .todo__lists {
@@ -165,7 +169,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   padding: 0.8rem;
-  color: #777a92;
+  color: #cacde8;
   border-bottom: 1px solid #393a4c;
   background-color: #25273c;
 }
@@ -197,8 +201,9 @@ body {
   z-index: 2;
 }
 
-.todo__lists__list__check-all img {
+.todo__lists__list__check-all .imgActive {
   display: block;
+  pointer-events: none;
 }
 
 .todo__lists__list__check-all:hover {
@@ -234,8 +239,17 @@ body {
   width: 90%;
 }
 
+.todo__lists__list__todo::first-letter {
+  text-transform: uppercase;
+}
+
 .todo__lists__list__todo span:hover {
   cursor: pointer;
+}
+
+.todo__lists__list .line-complete {
+  text-decoration: line-through;
+  color: #4d5066;
 }
 
 .todo__lists__list__delete {
@@ -308,7 +322,7 @@ body {
   color: #cacde8;
 }
 
-.todo__navs__nav__ul li .active {
+.todo__navs__nav__ul li .actived {
   color: #3a7bfd;
 }
 
