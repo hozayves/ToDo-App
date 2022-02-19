@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./dist/images/favicon-32x32.png">
+    <title>Frontend Mentor | Todo app</title>
+    <link rel="stylesheet" href="./dist/css/main.css">
+</head>
+<body>
+    <div class="todo">
+        <!-- HEADER TITLE AND DARK/LIGHT MODE -->
+        <div class="todo__header">
+            <h1 class="todo__header__title">todo</h1>
+            <div class="todo__header__light-dark">
+                <img class="icon-show" src="./dist/images/icon-sun.svg" alt="icon-sun">
+                <img class="icon-hide" src="./dist/images/icon-moon.svg" alt="icon-moon">
+            </div>
+        </div>
+        <!-- INPUT TODO AND CHECK WHOLE FOR COMPLETE -->
+        <div class="todo__input">
+            <div class="todo__input__check-all">
+                <img src="./dist/images/icon-check.svg" alt="icon-check">
+            </div>
+            <div class="todo__input__area">
+                <span  class="todo__input__area__placeholder">Current typing</span>
+                <div class="todo__input__area__text" editable contenteditable="true" spellcheck="false"></div>
+            </div>
+        </div>
+        <!-- TODOS, CHECK COMPLETE, DELETE, DRAG AND DROP,  -->
+        <div class="todo__lists">
+            <div class="todo__lists__list">
+                <div class="todo__lists__list__check">
+                    <img src="./dist/images/icon-check.svg" alt="icon-check">
+                </div>
+                <div class="todo__lists__list__todo">
+                    <span>Complete online Javascript course</span>
+                </div>
+                <img class="todo__lists__list__delete" src="./dist/images/icon-cross.svg" alt="">
+            </div>
+            <!--  -->
+            <div class="todo__lists__list">
+                <div class="todo__lists__list__check-all">
+                    <img src="./dist/images/icon-check.svg" alt="icon-check">
+                </div>
+                <div class="todo__lists__list__todo">Complete online Javascript course</div>
+                <img class="todo__lists__list__delete" src="./dist/images/icon-cross.svg" alt="">
+            </div>
+        </div>
+        <div class="todo__navs">
+            <div class="todo__navs__counter">
+                <span class="todo__navs__counter__count">5</span>
+                <span>items left</span>
+            </div>
+            <div class="todo__navs__nav">
+                <ul class="todo__navs__nav__ul">
+                    <li><a class="active" href="#!">All</a></li>
+                    <li><a href="#!">Active</a></li>
+                    <li><a href="#!">Completed</a></li>
+                </ul>
+            </div>
+            <div class="todo__navs__clear">
+                Clear Completed
+            </div>
+        </div>
+    </div>
+</body>
+</html>
