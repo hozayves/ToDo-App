@@ -25,7 +25,8 @@
             </div>
             <div class="todo__input__area">
                 <span  class="todo__input__area__placeholder">Current typing</span>
-                <div class="todo__input__area__text" editable contenteditable="true" spellcheck="false"></div>
+                <input type="text" class="todo__input__area__text">
+                <!-- <div class="todo__input__area__text" editable contenteditable="true" spellcheck="false"></div> -->
             </div>
         </div>
         <!-- TODOS, CHECK COMPLETE, DELETE, DRAG AND DROP,  -->
@@ -44,7 +45,7 @@
                 <div class="todo__lists__list__check-all">
                     <img src="./dist/images/icon-check.svg" alt="icon-check">
                 </div>
-                <div class="todo__lists__list__todo">Complete online Javascript course</div>
+                <div class="todo__lists__list__todo line-complete">Complete online Javascript course</div>
                 <img class="todo__lists__list__delete" src="./dist/images/icon-cross.svg" alt="">
             </div>
         </div>
@@ -55,9 +56,9 @@
             </div>
             <div class="todo__navs__nav">
                 <ul class="todo__navs__nav__ul">
-                    <li><a class="active" href="#!">All</a></li>
-                    <li><a href="#!">Active</a></li>
-                    <li><a href="#!">Completed</a></li>
+                    <li><a class="All actived" href="#!">All</a></li>
+                    <li><a class="Active" href="#!">Active</a></li>
+                    <li><a class="Completed" href="#!">Completed</a></li>
                 </ul>
             </div>
             <div class="todo__navs__clear">
@@ -65,5 +66,6 @@
             </div>
         </div>
     </div>
+    <script src="./dist/js/main.js"></script>
 </body>
 </html>
