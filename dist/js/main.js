@@ -1,7 +1,10 @@
 // SELECTORS
 const todoInput = document.querySelector('.todo__input__area__text'),
       todoPlaceholder = document.querySelector('.todo__input__area__placeholder'),
-      todoLists = document.querySelector('.todo__lists');
+      todoLists = document.querySelector('.todo__lists'),
+      todoNavs = document.querySelector('.todo__navs__nav__ul'),
+      tabItems = document.querySelectorAll('.tab-item'),
+      counter = document.querySelector('.todo__navs__counter__count');
 
 // EVENT LISTENERS
     // Input handle placehodler
@@ -12,6 +15,9 @@ const todoInput = document.querySelector('.todo__input__area__text'),
     
     // Marking complete todo
     todoLists.addEventListener('click', markComplete);
+
+    // Filtering todos
+    todoNavs.addEventListener('click', filterTodo);
 
 // FUNCTIONS
 
@@ -45,10 +51,56 @@ function markComplete(e) {
         parentNode.remove();
     }
 }
+// FUNCTION FOR FILTERING TODOS BASED COMPLETE, ACTIVE & ALL
+function filterTodo(e) {
+    const targetValue = todoLists.childNodes;
+    targetValue.forEach(todo => {
+        switch(e.target.classList[0]) {
+            case 'All':
+                removeActive(); // Remove active class to the clicked nav
+                addActive(e);// Adding active class to the clicked nav
+                todo.style.display = "flex";
+                break;
+            case 'Active':
+                removeActive(); // Remove active class to the clicked nav
+                addActive(e);// Adding active class to the clicked nav
+                if(!todo.firstChild.nextSibling.classList.contains('line-complete')) {
+                    todo.style.display = "flex";
+                } else {
+                    todo.style.display = "none";
+                }
+                break;
+            case 'Completed':
+                removeActive(); // Remove active class to the clicked nav
+                addActive(e); // Adding active class to the clicked nav
+                if(todo.firstChild.nextSibling.classList.contains('line-complete')) {
+                    todo.style.display = 'flex';
+                } else {
+                    todo.style.display = "none";
+                }
+                break;
+        }
+    })
+}
 
-
-
-
+// REMOVING ACTIVE CLASS TO THE NAVS
+function removeActive() {
+    return tabItems.forEach(item => item.classList.remove('actived'));
+}
+//  ADDING ACTIVE CLASS TO THE NAVS
+function addActive(e) {
+    e.target.classList.add('actived');
+}
+//  UPDATING A TODO LISTS COUNTER
+function todoCounter() {
+   setInterval(() => {
+        const currentTodo = todoLists.childElementCount;
+        counter.innerHTML = currentTodo;
+        
+   }, 500)
+}
+// CALLLING TODOS COUNTER FUNCTION
+todoCounter();
 
 // FUNCTION FOR CREATE TODO ELEMENTS
 function todoElement(InputText) {
